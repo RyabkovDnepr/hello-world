@@ -1,0 +1,3 @@
+some kind of text
+other kind of text
+another kind of text
