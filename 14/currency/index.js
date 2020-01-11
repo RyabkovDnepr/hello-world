@@ -6,7 +6,7 @@ request('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=3&fbclid
     function (error, response, body) {
     //console.log('error:', error); // Print the error if one occurred
     //console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-    //console.log('body:', body); // Print the HTML for the Google homepage.
+    //console.log('body:', body); // Print the HTML for the page.
     let currArr = JSON.parse(body);
     for (let i = 0; i < currArr.length; i++) {
         for (key in currArr[i]) {
