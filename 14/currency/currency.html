@@ -10,9 +10,8 @@
     <script>
         fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=3&fbclid=IwAR20GSdKClDe5lvU3MiXPygbLhU0DPz_Oi6npoZ7W6XM72oSPdhmZpMI7bE')
         .then (function(response) {
-            return response.text();
-        }).then (function(body) {
-            let currObj = JSON.parse(body);
+            return response.json();
+        }).then (function(currObj) {
             for (let i = 0; i < currObj.length; i++) {
                 for (key in currObj[i]) {
                     if (key == 'ccy') document.body.innerText += ('\nКурс ' + currObj[i][key] + ' к ');
