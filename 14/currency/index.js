@@ -13,7 +13,7 @@ request('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=3&fbclid
             if (key == 'ccy') console.log('Курс ' + currArr[i][key] + ' к ');
             if (key == 'base_ccy') console.log(currArr[i][key] + ' равен:\n');
             if (key == 'buy') console.log('Покупка: ' + currArr[i][key]);
-            if (key == 'buy') console.log('Продажа: ' + currArr[i][key] + '\n------------------\n');
+            if (key == 'buy') console.log('Продажа: ' + currArr[i][key] + '\n__________________\n');
         }
     }
     });

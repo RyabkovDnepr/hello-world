@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Текущий курс валют ПриватБанк</title>
+</head>
+<body>
+    <script>
+        fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=3&fbclid=IwAR20GSdKClDe5lvU3MiXPygbLhU0DPz_Oi6npoZ7W6XM72oSPdhmZpMI7bE')
+        .then (function(response) {
+            return response.text();
+        }).then (function(body) {
+            let currObj = JSON.parse(body);
+            for (let i = 0; i < currObj.length; i++) {
+                for (key in currObj[i]) {
+                    if (key == 'ccy') document.body.innerText += ('\nКурс ' + currObj[i][key] + ' к ');
+                    if (key == 'base_ccy') document.body.innerText += (' ' + currObj[i][key] + ' равен:\n\n');
+                    if (key == 'buy') document.body.innerText += ('Покупка: ' + currObj[i][key]);
+                    if (key == 'buy') document.body.innerText += ('\nПродажа: ' + currObj[i][key] + '\n________________________________\n');
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>
